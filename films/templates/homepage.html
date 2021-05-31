@@ -1,0 +1,23 @@
+{% extends 'partials/base.html' %}
+
+{% block content %}
+<h1>All Films</h1>
+
+{% for i in films%}
+<div class="card" style="width: 18rem;">
+    <img src="..." class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{i.title}}</h5>
+      <p class="card-text">
+
+              <p>{{i.release_date}}</p>
+              <p>{{i.category.name}}</p>
+              <p>{{i.director}}</p>
+          </ul>
+      </p>
+      <a href="{% url 'update_film' i.id %}" class="btn btn-primary">Update Film</a>
+    </div>
+  </div>
+{% endfor %}
+
+{% endblock %}
